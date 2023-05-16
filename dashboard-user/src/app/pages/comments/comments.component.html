@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="input-container">
+      <input type="text" [(ngModel)]="searchValue" (input)="filterPosts()" placeholder="Filter">
+    </div>
+  
+    <ul class="post-list">
+      <li class="post-item" *ngFor="let post of filteredPosts">
+        <div class="post-title">{{ post.title }}</div>
+        <div class="post-body">{{ post.body }}</div>
+      </li>
+    </ul>
+  </div>

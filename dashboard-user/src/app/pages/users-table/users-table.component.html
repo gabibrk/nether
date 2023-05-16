@@ -1,0 +1,31 @@
+<h1>All Users</h1>
+
+<div class="input-container">
+  <input type="text" [(ngModel)]="searchValue" (input)="filterPosts()" placeholder="Filter by user name">
+</div>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th (click)="toggleSortDirection()">Name <i class="fa fa-sort"></i></th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>phone</th>
+        <th>address</th>
+        <th>website</th>
+        <th>number of albums</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers" (click)="openUserComments(user.id)">
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.address}}</td>
+        <td>{{user.website}}</td>
+        <td>{{user.numberOfAlbums}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
